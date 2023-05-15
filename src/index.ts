@@ -1,13 +1,34 @@
 import { ItemPedido, Pedido } from './crud';
+import { Usuario } from './cadastroUsuario';
+import { Retangulo, Circulo } from './elemento';
+import { Computador, Pizza, Pedido1 } from './pedido';
 
-function atividade1() {}
-atividade1();
+function atividade1() {
+  const computador = new Computador(10000, 'computador bom', 'ele é bom mesmo');
+  const pizza = new Pizza(68, 'pizza doce', 'cocholate branco com nozes');
+  const pizza2 = new Pizza(60, 'pizza salgada', 'brocolis e frango');
 
-function atividade2() {}
-atividade2();
+  const pedido = new Pedido1([computador, pizza]);
 
-function atividade4() {}
-atividade4();
+  pedido.adicionarMaisUmItem(pizza2);
+  console.log(pedido);
+}
+
+function atividade2() {
+  const retangulo = new Retangulo(1, 2);
+  const circulo = new Circulo(8);
+
+  retangulo.desenhar();
+  retangulo.redimensionar(6, 7);
+  circulo.desenhar();
+  circulo.redimensionar(10);
+}
+
+function atividade4() {
+  const usuario1 = new Usuario('gabrielaleichtweis@gmail.com', '123456abc');
+
+  console.log(usuario1);
+}
 
 function atividade5() {
   const item1 = new ItemPedido(100, 'camiseta', 2);
